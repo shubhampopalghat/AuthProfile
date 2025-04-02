@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+    class=" overflow-hidden font-['helvetica_now_display'] bg-[#282a37] min-h-screen bg-[linear-gradient(90deg,#4f4f4f2e_1px,transparent_0),linear-gradient(180deg,#8080800a_1px,transparent_0)] bg-[size:7px_7px]">
+    
+<style>
+     nav {
+        z-index: 50; 
+        position: relative; 
+    }
+</style>
+
+    <nav class="z-50 w-full flex justify-between fixed top-0 mt-5 text-white px-5 py-3">
+        <h3 class="text-xl font-semibold">  AuthProfile </h3>
+        <div class="flex gap-4">
+            <% var notloggedin=typeof notloggedin !=="undefined" ? notloggedin: true %>
+            <% if(notloggedin) { %>
+                <a class=" text-green-500" href="/profile"> Profile </a>
+                <% } %>
+            <% var loggedin=typeof loggedin !=="undefined" ? loggedin: true %>
+                <% if(loggedin) { %>
+                    <a href="/Login"> </a>
+                    <a href="/cart"> </a>
+                    <a href=""> </a>
+                    <a class=" text-red-600" href="/logout"> Logout </a>
+                    <% } %>
+        </div>
+    </nav>

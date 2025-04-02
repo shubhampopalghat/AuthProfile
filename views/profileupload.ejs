@@ -1,0 +1,24 @@
+<%- include('./partials/header') %>
+
+<% if(error.length>0){ %>
+    <div class="flash-message absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
+        <span class="inline-block mt-1 mb-1 text-white">
+            <%= error %>
+        </span>
+    </div>
+    <% } %>
+
+<div class="mt-20 mx-5 tracking-tighter w-full min-h-screen text-white pt-5 ">
+    <div class="mx-5">
+    <h3 class="text-3xl "> Upload Your Profile  </h3>
+    <a class=" mb-4 text-green-400" href="/login"> Back to Profile </a>
+    <form action="/upload/<%=user._id%>" method="post" enctype="multipart/form-data">
+        <input  type="file" class="border-1 border-zinc-500 rounded-lg px-5 py-1" name="image">  
+        <input class="px-5 py-2 m-3 outline-none rounded-lg bg-blue-500" type="submit" name="submit"
+            value="Upload">
+        </div>
+    </form>
+</div>
+
+
+<%- include('./partials/footer') %>

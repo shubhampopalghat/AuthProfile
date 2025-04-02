@@ -1,0 +1,67 @@
+<%- include('./partials/header') %>
+<% if(error.length>0){ %>
+    <div class="flash-message absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
+        <span class="inline-block mt-1 mb-1 text-white">
+            <%= error %>
+        </span>
+    </div>
+    <% } %>
+        <% if(success.length>0){ %>
+            <div class="flash-message absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
+                <span class="inline-block mt-1 mb-1 text-white">
+                    <%= success %>
+                </span>
+            </div>
+            <% } %>
+<div class="main-container flex min-h-screen">
+
+    <main class=" mx-auto my-auto md:mx-10 max-w-[90%] md:max-w-[35vw]">
+        
+        
+        <h1 class="text-2xl md:text-4xl mt-1 text-white font-semibold"> Login to your account </h1>
+        <h2 class="text-[#cdd2de] text-base md:text-lg mt-2"> New user? create an account <a href="/" class=" cursor-pointer text-blue-500"> Register </a> </h2>
+
+        <form class="mt-10" autocomplete="off" action="/login" method="post" >
+
+            <!-- Email -->
+            <div class="mt-5">
+                <div
+                    class="w-full bg-[#333645] flex justify-between rounded-2xl px-5 py-2 border-2 border-transparent items-center focus-within:border-zinc-500 transition duration-300">
+                    <div class="w-full">
+                        <p class="text-[10px] text-[#cdd2de]"> Email </p>
+                        <input class="text-sm w-full text-sm md:text-base bg-transparent text-white outline-none"
+                            type="email" id="email" name="email" placeholder="" required>
+                    </div>
+                    <img class="w-4" src="/images/mail.svg" alt="icon">
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mt-5">
+                <div
+                    class="w-full bg-[#333645] flex justify-between rounded-2xl px-5 py-2 border-2 border-transparent items-center focus-within:border-zinc-500 transition duration-300">
+                    <div class="w-full flex items-center">
+                        <div class="flex-1">
+                            <p class="text-[10px] text-blue-400"> Password </p>
+                            <input class="text-sm w-full bg-transparent text-white md:text-base outline-none" 
+                                   type="password" id="password" name="password" placeholder="" required>
+                        </div>
+                        <img class="w-4 cursor-pointer" 
+                             src="/images/eye-off.svg" alt="icon" id="toggleIcon" onclick="togglePassword()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-10">
+                <button type="submit"
+                    class="w-full p-4 text-white bg-blue-500 rounded-2xl hover:bg-blue-600 transition">
+                    Login
+                </button>
+            </div>
+
+        </form>
+    </main>
+</div>
+
+<%- include('./partials/footer') %>
