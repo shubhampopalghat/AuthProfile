@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "engines": {
-    "node": "22.x"
+    "node": "v18.x"
   },
   "scripts": {
     "start": "node app.js",
